@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "691a0b31-b34e-41f8-bb83-1efc60ea7436",
+		"name": "Ubigeo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Departamentos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/departamentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"departamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Provincias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/provincias?departamento=Lima",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"provincias"
+					],
+					"query": [
+						{
+							"key": "departamento",
+							"value": "Lima"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Distritos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/distritos?departamento=Lima&provincia=Lima",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"distritos"
+					],
+					"query": [
+						{
+							"key": "departamento",
+							"value": "Lima"
+						},
+						{
+							"key": "provincia",
+							"value": "Lima"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

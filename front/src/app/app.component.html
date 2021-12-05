@@ -1,0 +1,59 @@
+<h1 class="mt-5">Selectores anidados</h1>
+<hr>
+
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
+
+
+  <div class="row m-4">
+
+    <!-- Departamento -->
+    <div class="col-2">
+      <label class="form-label">Departamentos:</label>
+      <select class="form-control"
+              formControlName="departamento">
+        <option value=""> -- Seleccione Departamento --</option>
+        <option *ngFor="let departamento of departamentos"
+                [value]="departamento"> {{ departamento }} </option>
+      </select>
+    </div>
+
+    <!-- Provincia -->
+    <!-- *ngIf="provincias.length !== 0"-->
+    <div class="col-2">
+      <label class="form-label">Provincia:</label>
+      <select class="form-control"
+              formControlName="provincia">
+        <option value=""> -- Seleccione Provincia --</option>
+        <option *ngFor="let provincia of provincias"
+                [value]="provincia"> {{ provincia }} </option>
+      </select>
+    </div>
+
+    <!-- Distrito -->
+    <div class="col-2">
+      <label class="form-label">Distrito:</label>
+      <select class="form-control"
+              formControlName="distrito">
+        <option value=""> -- Seleccione Distrito --</option>
+        <option *ngFor="let ubigeo of distritos"
+                [value]="ubigeo.distrito"> {{ ubigeo.distrito }} </option>
+      </select>
+    </div>
+
+  </div>
+
+
+  <!--  <div class="row" *ngIf="cargando">
+      <div class="col">
+        <div class="alert alert-primary">
+          Cargando...
+        </div>
+      </div>
+    </div>-->
+
+  </form>
+
+  <h3>Formulario</h3>
+  <pre>Valid: {{ miFormulario.valid }}</pre>
+  <pre>{{ miFormulario.value | json }}</pre>
+
